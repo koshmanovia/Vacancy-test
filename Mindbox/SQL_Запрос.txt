@@ -1,0 +1,3 @@
+SELECT prod_name, cat_name
+FROM Products, Categories
+LEFT OUTER JOIN Categories ON Product.id = Categories.id;

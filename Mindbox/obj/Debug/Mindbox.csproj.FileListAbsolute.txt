@@ -1,0 +1,7 @@
+C:\MyProg\VS\projects\Vacancy\Mindbox\bin\Debug\Mindbox.exe.config
+C:\MyProg\VS\projects\Vacancy\Mindbox\bin\Debug\Mindbox.exe
+C:\MyProg\VS\projects\Vacancy\Mindbox\bin\Debug\Mindbox.pdb
+C:\MyProg\VS\projects\Vacancy\Mindbox\obj\Debug\Mindbox.csproj.AssemblyReference.cache
+C:\MyProg\VS\projects\Vacancy\Mindbox\obj\Debug\Mindbox.csproj.CoreCompileInputs.cache
+C:\MyProg\VS\projects\Vacancy\Mindbox\obj\Debug\Mindbox.exe
+C:\MyProg\VS\projects\Vacancy\Mindbox\obj\Debug\Mindbox.pdb
