@@ -1,0 +1,15 @@
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\TinkoffExamOne.exe
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\TinkoffExamOne.deps.json
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\TinkoffExamOne.runtimeconfig.json
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\TinkoffExamOne.dll
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\ref\TinkoffExamOne.dll
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\bin\Debug\net6.0\TinkoffExamOne.pdb
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.csproj.AssemblyReference.cache
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.AssemblyInfoInputs.cache
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.AssemblyInfo.cs
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.csproj.CoreCompileInputs.cache
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.dll
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\ref\TinkoffExamOne.dll
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.pdb
+C:\MyProg\VS\projects\Vacancy-test\TinkoffExamOne\TinkoffExamOne\obj\Debug\net6.0\TinkoffExamOne.genruntimeconfig.cache
