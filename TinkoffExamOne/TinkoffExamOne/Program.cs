@@ -47,7 +47,7 @@ public class Store
 
         for (int i = 0; i < notSortArrayProd.Count; i++)
         {   
-            for (int j = i + 1; j < sortArrayProd.Count; j++)
+            for (int j = i + 1; j < notSortArrayProd.Count; j++)
             {
                 if (notSortArrayProd[i].Price < notSortArrayProd[j].Price)
                 {
