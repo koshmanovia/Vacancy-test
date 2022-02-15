@@ -1,0 +1,8 @@
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\bin\Debug\KonturSearch.exe.config
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\bin\Debug\KonturSearch.exe
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\bin\Debug\KonturSearch.pdb
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\obj\Debug\KonturSearch.csproj.AssemblyReference.cache
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\obj\Debug\KonturSearch.csproj.SuggestedBindingRedirects.cache
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\obj\Debug\KonturSearch.csproj.CoreCompileInputs.cache
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\obj\Debug\KonturSearch.exe
+C:\MyProg\VS\projects\Vacancy-test\kontur\KonturSearch\KonturSearch\obj\Debug\KonturSearch.pdb
