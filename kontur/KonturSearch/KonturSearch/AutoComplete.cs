@@ -15,31 +15,31 @@ namespace AutoComplete
         StringBuilder tempFullName = new StringBuilder();
         LinkedList<string> linkedListForSearching = default;
         public void AddToSearch(List<FullName> fullNames)
-        {   //Добавьте новый элемент чтобы он начал участвовать в поиске по фио         
+        {          
             List<string> listForSearching = new List<string>();
             foreach (var fullName in fullNames)
             {
-                if (fullName.Surname != null)
-                {
-                    tempFullName.Append(fullName.Surname + " ");
+                if (fullName.Surname != null && string.IsNullOrWhiteSpace(fullName.Surname) != true)
+                {                   
+                    tempFullName.Append(fullName.Surname.Replace(" ", "") + " ");
                 }
-                if (fullName.Name != null)
+                if (fullName.Name != null && string.IsNullOrWhiteSpace(fullName.Name) != true)
                 {
-                    tempFullName.Append(fullName.Name + " ");
+                    tempFullName.Append(fullName.Name.Replace(" ", "") + " ");
                 }
-                if (fullName.Patronymic != null)
+                if (fullName.Patronymic != null && string.IsNullOrWhiteSpace(fullName.Patronymic) != true)
                 {
-                    tempFullName.Append(fullName.Patronymic);
+                    tempFullName.Append(fullName.Patronymic.Replace(" ", "") + " ");
                 }
-                listForSearching.Add(tempFullName.ToString());
+                
+                listForSearching.Add(tempFullName.ToString().Remove(tempFullName.ToString().Length - 1, 1));
                 tempFullName.Clear();
             }
             listForSearching.Sort();
             linkedListForSearching = new LinkedList<string>(listForSearching);            
         }  
         public List<string> Search(string prefix)
-        {
-            //Реализуйте алгоритм поиска по префиксу фио, при этом фио может состоять только из имени или фамилии и имени или отчества или фамилии и отчества или всё вместе.
+        {            
             List<string> outputFullNameList = new List<string>();            
             if (prefix.Length > 101)
             {
@@ -52,7 +52,7 @@ namespace AutoComplete
 
             foreach (var stringСompare in linkedListForSearching)
             {                
-                if (stringСompare.Substring(0, prefix.Length).ToString().Contains(prefix))
+                if (stringСompare.ToLower().Substring(0, prefix.Length).ToString().Contains(prefix.ToLower()))
                 {
                     outputFullNameList.Add(stringСompare);
                 }
@@ -62,8 +62,5 @@ namespace AutoComplete
     }
 }
 
-//Переданное ФИО может содержать между фамилией и именем или именем и отчеством множество пробелов. Количество пробелов не должно влиять на поиск.
-
-//Ради упрощения, решили что автокомплит будет искать только по префиксу, без исправления ошибок и без поиска по подстроке.
 
 
