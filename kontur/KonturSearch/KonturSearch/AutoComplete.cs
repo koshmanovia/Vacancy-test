@@ -11,56 +11,90 @@ namespace AutoComplete
         public string Patronymic;
     }
     public class AutoCompleter
-    {       
-        StringBuilder tempFullName = new StringBuilder();
-        LinkedList<string> linkedListForSearching = default;
+    {              
+        List<string> listForSearching = new List<string>();
+        List<string> outputFullNameList = new List<string>();
         public void AddToSearch(List<FullName> fullNames)
-        {          
-            List<string> listForSearching = new List<string>();
-            foreach (var fullName in fullNames)
+        {  
+            if (fullNames[0].Surname != null)
             {
-                if (fullName.Surname != null && string.IsNullOrWhiteSpace(fullName.Surname) != true)
-                {                   
-                    tempFullName.Append(fullName.Surname.Replace(" ", "") + " ");
-                }
-                if (fullName.Name != null && string.IsNullOrWhiteSpace(fullName.Name) != true)
+                if (fullNames[0].Name != null)
                 {
-                    tempFullName.Append(fullName.Name.Replace(" ", "") + " ");
+                    if (fullNames[0].Patronymic != null)
+                    {
+                        foreach (var fullname in fullNames)
+                        {
+                            listForSearching.Add($"{fullname.Surname.Replace(" ", "")} {fullname.Name.Replace(" ", "")} {fullname.Patronymic.Replace(" ", "")}");
+                        }
+                    }
+                    else
+                    {
+                        foreach (var fullname in fullNames)
+                        {
+                            listForSearching.Add($"{fullname.Surname.Replace(" ", "")} {fullname.Name.Replace(" ", "")}");
+                        }                           
+                    }
                 }
-                if (fullName.Patronymic != null && string.IsNullOrWhiteSpace(fullName.Patronymic) != true)
+                else
+                if (fullNames[0].Patronymic != null)
                 {
-                    tempFullName.Append(fullName.Patronymic.Replace(" ", "") + " ");
+                    foreach (var fullname in fullNames)
+                    {
+                        listForSearching.Add($"{fullname.Surname.Replace(" ", "")} {fullname.Patronymic.Replace(" ", "")}");
+                    }
                 }
-                
-                listForSearching.Add(tempFullName.ToString().Remove(tempFullName.ToString().Length - 1, 1));
-                tempFullName.Clear();
+                else
+                {
+                    foreach (var fullname in fullNames)
+                    {
+                        listForSearching.Add($"{fullname.Surname.Replace(" ", "")}");
+                    }                    
+                }
             }
-            listForSearching.Sort();
-            linkedListForSearching = new LinkedList<string>(listForSearching);            
+            if (fullNames[0].Name != null && fullNames[0].Surname == null)
+            {               
+                if (fullNames[0].Patronymic != null)
+                {
+                    foreach (var fullname in fullNames)
+                    {
+                        listForSearching.Add($"{fullname.Name.Replace(" ", "")} {fullname.Patronymic.Replace(" ", "")}");
+                    }                    
+                }
+                else
+                {
+                    foreach (var fullname in fullNames)
+                    {
+                        listForSearching.Add($"{fullname.Name.Replace(" ", "")}");
+                    }
+                }
+            }
+            if(fullNames[0].Patronymic != null && fullNames[0].Surname == null && fullNames[0].Name == null)
+            {
+                foreach (var fullname in fullNames)
+                {
+                    listForSearching.Add($"{fullname.Patronymic.Replace(" ", "")}");
+                }
+            }         
         }  
         public List<string> Search(string prefix)
-        {            
-            List<string> outputFullNameList = new List<string>();            
+        {  
+       
             if (prefix.Length > 101)
             {
                 throw new ArgumentException("Long request name.");
-            }
+            }   
             if (string.IsNullOrWhiteSpace(prefix))
             {
                 throw new ArgumentException("Empty request.");
             }
-
-            foreach (var stringСompare in linkedListForSearching)
-            {                
-                if (stringСompare.ToLower().Substring(0, prefix.Length).ToString().Contains(prefix.ToLower()))
+            foreach (var stringСompare in listForSearching)
+            {
+                if(prefix.Equals(stringСompare.Substring(0, prefix.Length)))
                 {
                     outputFullNameList.Add(stringСompare);
-                }
+                }                    
             }
             return outputFullNameList;
-        }    
+        }
     }
 }
-
-
-
