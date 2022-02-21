@@ -13,7 +13,7 @@ namespace AutoComplete
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            string prefix = "Iv";
+            string prefix = "iva";
             var listOtput = new List<string>();
             var listFullNameTest = new List<FullName>()
             {
@@ -1590,18 +1590,52 @@ namespace AutoComplete
                  new FullName() { Name ="Iavan"},
                  new FullName() { Name ="aIvan"},
                  new FullName() { Name ="Iaavan"},
+                 new FullName() { Name ="Ivanovo"},
+                 new FullName() { Name ="weIvaan"},
+                 new FullName() { Name ="reqwIavan"},
+                 new FullName() { Name ="qwaIvan"},
+                 new FullName() { Name ="qwerIaavan"},
             };
             var listSurnameTest = new List<FullName>
             {
-                new FullName(){Surname = "Ivanov"},
+                new FullName(){Surname = "Ivbbvanov"},
+                new FullName(){Surname = "Iavaanov"},
+                new FullName(){Surname = "Idfvanov"},
+                new FullName(){Surname = "Iasdvaanov"},
+                new FullName(){Surname = "Ivcvbxcfgsanov"},
                 new FullName(){Surname = "Ivaanov"},
-                new FullName(){Surname = "Iavanov"},
-                new FullName(){Surname = "Isvanov"},
-                new FullName(){Surname = "Isdvanov"},
-                new FullName(){Surname = "Iavanov"}
+                new FullName(){Surname = "qIavanov"},
+                new FullName(){Surname = "wIsvanov"},
+                new FullName(){Surname = "eIsdvanov"},
+                new FullName(){Surname = "rIavanov"},
+                new FullName(){Surname = "Iv"},
+                new FullName(){Surname = "I"},
+                new FullName(){Surname = "I1"},
+                new FullName(){Surname = "Iw"},
+                new FullName(){Surname = "Iv2"},
+                new FullName(){Surname = "Ivvvvvvv"},
+                new FullName(){Surname = "iv11111"},
+                new FullName(){Surname = "i"},
+                new FullName(){Surname = "eIsdvanov"},
+                new FullName(){Surname = "rIavanov"}
+            };
+            var ex1 = new List<FullName>
+            {
+                new FullName(){Surname = "Анастасия"},
+                new FullName(){Surname = "Анна"},
+                new FullName(){Surname = "Богдан"},
+                new FullName(){Surname = "Боря"},
+            };
+            var ex2 = new List<FullName>
+            {
+                new FullName(){Name = "Анатолий", Surname = "Хордин ", Patronymic ="Михайлович"},
+                new FullName() { Name ="Ivan", Surname = "Ivanov", Patronymic = "Ivanovich"},
+                new FullName(){Name = "    Миша  ",Surname = "       Ходайкин   ", Patronymic ="        Петрович"},
+                new FullName(){Surname = "Арбузова Анна Павловна"},
+
             };
             var ac = new AutoCompleter();
-            ac.AddToSearch(listNameTest);
+            ac.AddToSearch(listSurnameTest);
             Console.WriteLine("Start Search"); //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             listOtput = ac.Search(prefix);
             foreach (var item in listOtput)
