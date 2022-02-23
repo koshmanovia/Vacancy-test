@@ -6,42 +6,61 @@ namespace AutoComplete
 {
     public struct FullName
     {
+        internal string stringFullName;
+        private int fullNameHash;
         public string Name;
         public string Surname;
         public string Patronymic;
         public override string ToString()
         {
-            return string.Join(" ", Surname?.Trim(), Name?.Trim(), Patronymic?.Trim()).Trim();
+            stringFullName = string.Join(" ", Surname?.Trim(), Name?.Trim(), Patronymic?.Trim()).Trim();
+            return stringFullName;
+        }
+        public int GetHash()
+        {
+            if (stringFullName == null)
+            {
+                stringFullName = GetFullNameString();
+            }
+            if (fullNameHash == 0)
+            {
+                fullNameHash = stringFullName[0].GetHashCode();
+            }
+            return fullNameHash;
+        }
+        public string GetFullNameString()
+        {
+            if (stringFullName == null)
+            {
+                stringFullName = ToString();
+            }
+            return stringFullName;
         }
     }
     public class AutoCompleter
     {
-        char tempKey = default;
-        Dictionary<char, List<string>> fullNameDictionary = new Dictionary<char, List<string>>();
+        int tempArrayCount = default;
+        int tempKey = default;
+        Dictionary<int, List<string>> fullNameDictionary = new Dictionary<int, List<string>>();
         List<string> outputFullNameList = new List<string>();
         public void AddToSearch(List<FullName> fullNames)
         {
-            for (int i = 0; i < fullNames.Count; i++)
+            tempArrayCount = fullNames.Count;
+            for (int i = 0; i < tempArrayCount; i++)
             {
-                tempKey = fullNames[i].ToString().ToLower()[0];
-                Console.WriteLine(tempKey);//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                if (fullNameDictionary.ContainsKey(tempKey) != true)
+                tempKey = fullNames[i].GetHash();
+                if (fullNameDictionary.ContainsKey(tempKey))
                 {
-                    fullNameDictionary.Add(tempKey, new List<string>());
-                    fullNameDictionary[tempKey].Add(fullNames[i].ToString());
-                   // Console.WriteLine(fullNames[i].ToString());//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                    //Console.WriteLine("Значение добавлено ключа нет"); //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                    fullNameDictionary[tempKey].Add(fullNames[i].GetFullNameString());
                 }
                 else
                 {
-                    fullNameDictionary[tempKey].Add(fullNames[i].ToString());
-                   // Console.WriteLine(fullNames[i].ToString());//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                  // Console.WriteLine("Значение добавлено ключ есть"); //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                    fullNameDictionary.Add(tempKey, new List<string>() { fullNames[i].GetFullNameString() });
                 }
             }
         }
         public List<string> Search(string prefix)
-        {           
+        {
             if (prefix.Length > 100)
             {
                 throw new ArgumentException("Long request name.");
@@ -50,18 +69,18 @@ namespace AutoComplete
             {
                 throw new ArgumentException("Empty request.");
             }
-            tempKey = prefix.ToLower()[0];
-            Console.WriteLine(tempKey); //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            tempKey = prefix[0].GetHashCode();
+            outputFullNameList = new List<string>();
             if (fullNameDictionary.ContainsKey(tempKey))
             {
-                for (int i = 0; i < fullNameDictionary[tempKey].Count; i++)
+                tempArrayCount = fullNameDictionary[tempKey].Count;
+                for (int i = 0; i < tempArrayCount; i++)
                 {
                     try
                     {
-                        if (fullNameDictionary[tempKey][i].Substring(0, prefix.Length).ToLower() == prefix.ToLower())
+                        if (fullNameDictionary[tempKey][i].StartsWith(prefix))
                         {
                             outputFullNameList.Add(fullNameDictionary[tempKey][i]);
-                            Console.WriteLine(fullNameDictionary[tempKey][i]);//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                         }
                     }
                     catch (System.ArgumentOutOfRangeException)
@@ -69,8 +88,7 @@ namespace AutoComplete
                         continue;
                     }
                 }
-            }           
-            Console.WriteLine(outputFullNameList.Count);//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            }
             return outputFullNameList;
         }
     }
