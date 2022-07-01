@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeernAtomForms", "GeernAtomForms\GeernAtomForms.csproj", "{90E9F956-8AE7-4286-8869-F352A5A4D6DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90E9F956-8AE7-4286-8869-F352A5A4D6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E9F956-8AE7-4286-8869-F352A5A4D6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E9F956-8AE7-4286-8869-F352A5A4D6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E9F956-8AE7-4286-8869-F352A5A4D6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {464F29A2-B45A-48B7-B482-C743A49F6E01}
+	EndGlobalSection
+EndGlobal
