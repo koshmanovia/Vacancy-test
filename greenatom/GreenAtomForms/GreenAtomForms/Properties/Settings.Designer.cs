@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeernAtomForms.Properties
+namespace GreenAtomForms.Properties
 {
 
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("GeernAtomForms")]
+[assembly: AssemblyTitle("GreenAtomForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GeernAtomForms")]
+[assembly: AssemblyProduct("GreenAtomForms")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("90e9f956-8ae7-4286-8869-f352a5a4d6db")]
+[assembly: Guid("c3100cd8-bf90-4167-a870-a606aa4860e6")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

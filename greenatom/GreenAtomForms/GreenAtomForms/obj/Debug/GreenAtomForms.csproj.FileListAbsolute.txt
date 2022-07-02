@@ -1,0 +1,11 @@
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\bin\Debug\GreenAtomForms.exe.config
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\bin\Debug\GreenAtomForms.exe
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\bin\Debug\GreenAtomForms.pdb
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.csproj.AssemblyReference.cache
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.csproj.SuggestedBindingRedirects.cache
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.Properties.Resources.resources
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.csproj.GenerateResource.cache
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.csproj.CoreCompileInputs.cache
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.exe
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.pdb
+C:\MyProg\VS\projects\Vacancy-test\greenatom\GreenAtomForms\GreenAtomForms\obj\Debug\GreenAtomForms.Form1.resources
