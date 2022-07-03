@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace GreenAtomForms
 {
@@ -44,11 +45,12 @@ namespace GreenAtomForms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excel = new ExcelPackage())
             {
                 ExcelWorksheet worksheet = excel.Workbook.Worksheets.Add("Test"); //orig:ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Test");
                 excel.Workbook.Worksheets.Add("List1");
-                FileInfo excelFile = new FileInfo(textBox4.Text);//orig: FileInfo excelFile = new FileInfo(Server.MapPath("~/ExcelFile/test.xlsx"));
+                FileInfo excelFile = new FileInfo(textBox4.Text + @"\test.xlsx");//orig: FileInfo excelFile = new FileInfo(Server.MapPath("~/ExcelFile/test.xlsx"));
 
                 var headerRow = new List<string[]>()
                   {
