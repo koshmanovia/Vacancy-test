@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.JScript;
+using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +19,7 @@ namespace GreenAtomForms
     {
         private static string path = @"C:\MyProg\MySQL2019\MSSQL15.EDUASPNET\MSSQL\DATA\INTERMECH_BASE.mdf";
         private string connectionString = 
-            $"Database=INTERMECH_BASE;Data Source=localhost;AttachDbFilename={path};Integrated Security=True";
-        //string sql = "SELECT TOP(1) [F_GROUP_ID] FROM[INTERMECH_BASE].[dbo].[IMS_ATTR_IN_GROUPS]";
+            $"Database=INTERMECH_BASE;Data Source=localhost;AttachDbFilename={path};Integrated Security=True";        
         string sqlQuery = default;
         public Form1()
         {
@@ -25,45 +27,56 @@ namespace GreenAtomForms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            sqlQuery = new SqlQuery(int.Parse(textBox1.Text), textBox2.Text, textBox3.Text).ToString();
-            // sqlQuery =
-            //$"SELECT [F_OBJECT_TYPE],[F_OBJECT_ID],[F_LC_STEP],[F_ID],[F_OWNER_ID],[F_MODIFY_DATE],[F_OBJ_CREATE],[F_CREATOR_ID] FROM[INTERMECH_BASE].[dbo].[IMS_OBJECTS] WHERE[F_OBJECT_TYPE] = {textBox1.Text} ORDER BY[F_OBJECT_TYPE]";// =   ";
+            sqlQuery = new SqlQuery(int.Parse(textBox1.Text), textBox2.Text, textBox3.Text).ToString();           
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             sqlConnection.Open();
             SqlCommand command = new SqlCommand(sqlQuery, sqlConnection);
             label4.Text = command.ExecuteScalar().ToString();           
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            //Добавить обзор..
+            FolderBrowserDialog FBD = new FolderBrowserDialog();
+            if (FBD.ShowDialog() == DialogResult.OK)
+            {
+                textBox4.Text = FBD.SelectedPath;               
+            }
         }
-    }
-    class SqlQuery
-    {
-        private int _id = int.MinValue;
-        private string _name = null;
-        private string _notation = null;
-        public int Id { get { return _id; } }
-        public string Name { get { return _name; } }
-        public string Notation { get { return _notation; } }
-        public SqlQuery()
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            throw new ArgumentException("Запрос не может быть пустым, введите значение");
-        }
-        public SqlQuery(int id) => _id = id;
-        public SqlQuery(int id, string name){_id = id; _name = name; }
-  
-        public SqlQuery(int id, string name, string notation) { _id = id; _name = name; _notation = notation; }
-        public override string ToString()
-        {
-            string sql =
-                $"SELECT [F_OBJECT_ID],[F_OBJECT_TYPE],[F_LC_STEP],[F_ID],[F_OWNER_ID],[F_MODIFY_DATE],[F_OBJ_CREATE],[F_CREATOR_ID] FROM[INTERMECH_BASE].[dbo].[IMS_OBJECTS]";
-            if (Id > int.MinValue) { sql += $" WHERE[F_OBJECT_TYPE] = {_id}"; }
-            if (Name.Length != 0) { sql += $" WHERE[F_OBJECT_TYPE] = {_name}"; }
-            if (Notation.Length != 0) { sql += $" WHERE[F_OBJECT_TYPE] = {_notation}"; }
-            sql += " ORDER BY[F_OBJECT_TYPE]";
-            return sql;
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excel.Workbook.Worksheets.Add("Test"); //orig:ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Test");
+                excel.Workbook.Worksheets.Add("List1");
+                FileInfo excelFile = new FileInfo(textBox4.Text);//orig: FileInfo excelFile = new FileInfo(Server.MapPath("~/ExcelFile/test.xlsx"));
+
+                var headerRow = new List<string[]>()
+                  {
+                    new string[] { "ID","Name","Email", "Notation" }
+                  };
+
+                string Range = "A1:" + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+
+                worksheet = excel.Workbook.Worksheets["List1"];//orig:var worksheet = excel.Workbook.Worksheets["TestSheet1"];
+
+                worksheet.Cells[Range].LoadFromArrays(headerRow);
+
+                worksheet.Cells[Range].Style.Font.Bold = true;
+                worksheet.Cells[Range].Style.Font.Size = 16;
+                worksheet.Cells[Range].Style.Font.Color.SetColor(System.Drawing.Color.DarkBlue);
+
+                var Data = new List<object[]>()
+                {
+                    new object[] {"Test","test@gmail.com"},
+                    new object[] {"Test2","test2@gmail.com"},
+                    new object[] {"Test3","test3@gmail.com"},
+
+                };
+
+                worksheet.Cells[2, 1].LoadFromArrays(Data);
+
+                excel.SaveAs(excelFile);
+            }
         }
     }
 }
