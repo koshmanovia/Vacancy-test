@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2XOg6R/w7bRX4S5bT262Rnb4Jkn3PoqbjBz0B9bZVOCBjVZX5CunxEeFY8JzfhAa7mcZVcl163UfbjOgbjriTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\k0shm\\source\\repos\\Vacancy-test\\QA\\Task_1\\Task_1\\Task_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\k0shm\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}

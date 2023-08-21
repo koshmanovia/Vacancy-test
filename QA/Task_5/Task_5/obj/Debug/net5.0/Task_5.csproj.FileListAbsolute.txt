@@ -1,0 +1,16 @@
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.csproj.AssemblyReference.cache
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.AssemblyInfoInputs.cache
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.AssemblyInfo.cs
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.csproj.CoreCompileInputs.cache
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.exe
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.deps.json
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.runtimeconfig.json
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.runtimeconfig.dev.json
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.dll
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\ref\Task_5.dll
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\bin\Debug\net5.0\Task_5.pdb
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.dll
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\ref\Task_5.dll
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.pdb
+C:\Users\k0shm\source\repos\Vacancy-test\QA\Task_5\Task_5\obj\Debug\net5.0\Task_5.genruntimeconfig.cache

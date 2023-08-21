@@ -1,0 +1,16 @@
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.exe
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.deps.json
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.runtimeconfig.json
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.runtimeconfig.dev.json
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.dll
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\ref\Morphology.dll
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\bin\Debug\net5.0\Morphology.pdb
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.csproj.AssemblyReference.cache
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.AssemblyInfoInputs.cache
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.AssemblyInfo.cs
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.csproj.CoreCompileInputs.cache
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.dll
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\ref\Morphology.dll
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.pdb
+C:\Users\k0shm\source\repos\Vacancy-test\kontur\Morphology\Morphology\obj\Debug\net5.0\Morphology.genruntimeconfig.cache
