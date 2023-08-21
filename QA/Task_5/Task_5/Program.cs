@@ -13,7 +13,8 @@ namespace Task_5
             "tvgybhunjhygtfrderftgybhnujmnhbgvftgvybhunjminuhbygtvfrtgyhujnimy" +
             "fghyetdy65redfghjyutrgfvbhjyu675t4redfghtyrfdvghtyr</.//.,><><", new System.DateTime(2022, 11, 11, 11, 11, 11));
             Console.WriteLine(dtIncorrectInput.Name.Length);
-            Console.WriteLine(  Regex.IsMatch(str, @"[<>/\\]+$"));
+            Console.WriteLine(  Regex.IsMatch(str, @"^[<>/\\]+$"));
+            Console.WriteLine(!Regex.IsMatch(str, @"[/\\\\<>]"));
             Console.WriteLine(str.Contains("/"));
             Console.WriteLine(str.Contains("\\"));
             Console.WriteLine(str.Contains(">"));
