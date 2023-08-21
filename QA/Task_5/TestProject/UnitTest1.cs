@@ -27,21 +27,21 @@ namespace TestProject
         public void CorrectNameInDate()
         {
             bool result = default;
-            if (dtIncorrectInput.Name.Length <= 200)
+            if (dtIncorrectInput.Name.Length <= 200 && !Regex.IsMatch(dtIncorrectInput.Name, @"^[<>/\\]+$"))
             {
                  result = true;
             }
             Assert.AreEqual(true, result);
         }
-        [TestMethod]
-        public void CorrectNameInDate()
-        {
-            bool result = default;
-            if (dtIncorrectInput.Name.Length <= 200)
-            {
-                result = true;
-            }
-            Assert.AreEqual(true, result);
-        }
+        //[TestMethod]
+        //public void CorrectNameInDate()
+        //{
+        //    bool result = default;
+        //    if (dtIncorrectInput.Name.Length <= 200)
+        //    {
+        //        result = true;
+        //    }
+        //    Assert.AreEqual(true, result);
+        //}
     }
 }
