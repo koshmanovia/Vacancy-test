@@ -7,7 +7,7 @@ $list = array (
     '20:30-21:30',
     '21:30-22:30',
 );
-function CheckValidTime($subject)
+function CheckValidTime(string $subject) : bool
 {
     if(preg_match('/([01]?[0-9]|2[0-3]):[0-5][0-9]-([01]?[0-9]|2[0-3]):[0-5][0-9]/', $subject) == 1)
     {
@@ -18,7 +18,7 @@ function CheckValidTime($subject)
         return false;
     }
 }
-function CheckOverlayTime($newTimeInterval)
+function CheckOverlayTime(string $newTimeInterval) : bool
 {
     global $list;
     if(CheckValidTime($newTimeInterval))
@@ -38,7 +38,7 @@ function CheckOverlayTime($newTimeInterval)
 
             if(strtotime($startNewInterval) < strtotime($finishArrayInterval) and strtotime($finishNewInterval) > strtotime($startArrayInterval))
             {
-                return 'Пересекаются';
+                return true;
             }
         }
     }
@@ -46,5 +46,5 @@ function CheckOverlayTime($newTimeInterval)
     {
         throw new ErrorException('Input bad format time interval!');
     }
-    return 'Не пересекаются';
+    return false;
 }

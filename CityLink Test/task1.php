@@ -53,7 +53,7 @@ $workers = array (
         'area_name' => 'Центр', //14
     ),
 );
-function GetWorker(string $inputDist)
+function GetWorker(string $inputDist) : ?string
 {
     global $areas;
     global $nearby;
