@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 1;
+    content: 1;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background-color: #aaa;
+}
+
+img{
+    max-width: 100%;
+} 
