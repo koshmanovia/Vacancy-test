@@ -7,6 +7,7 @@ var headErrorIncorrectData = "Ошибка ввода!";
 var bodyErrorIncorrectData = "Введите имена кириллицей, через запятую.";
 var bodyErrorEmptyData = "Пустое поле ввода! Необходимо внести данные"
 var fullTable = '';
+var url = 'http://localhost:3000';
 //Вывод основной верстки
 window.onload = function() 
 {
@@ -48,8 +49,9 @@ function ManipulationInputData ()
         {
             let arrWords = input.split(separator);
             tempArray =tempArray.concat(arrWords);
+            SendPostRequest();
             document.querySelector('input').value = '';
-            ViewTableFromInput(); 
+            ViewTableFromInput();
         }
         else 
         {    
@@ -61,23 +63,50 @@ function ManipulationInputData ()
         ErrorWindow(headErrorIncorrectData, bodyErrorEmptyData);
     } 
 }
-//Отображение таблицы
-function ViewTableFromInput()
+
+function SendPostRequest() 
 {
-    let tableStart ='<table class="table" id="sortable"><thead><tr><th scope="col" data-type="number">№</th>' + 
-        '<th scope="col" data-type="string" >Имя</th><th scope="col" data-type="number">Очки</th></tr></thead>' ;
+    fetch(url, 
+    {
+        method: 'POST',
+        headers: 
+        {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(tempArray)
+    })
+        .then(response => response.json())
+        .then(data => 
+        {
+            ViewTableFromInput(data);
+        })
+        .catch(error => {
+            console.error('Произошла ошибка:', error);
+        });
+}
+//Отображение таблицы
+function ViewTableFromInput(data) {
+    let tableStart = '<table class="table" id="sortable"><thead><tr><th scope="col" data-type="number">№</th>' +
+        '<th scope="col" data-type="string">Имя</th><th scope="col" data-type="number">Очки</th></tr></thead>';
     let tableFinish = '</table>';
     let list = '';
-    for(let i = 0; i < tempArray.length; i++ )
-    {
-        if (tempArray[i]!= ' ' && tempArray[i]!= '')
-        { 
-            list+= '<tr><th scope="row">' + (i + 1) + '</th>' + '<td>' + tempArray[i] + '</td>' + '<td>' + Math.floor(Math.random()* 101) + '</td>' + '</tr>';
+
+    // Перебор данных и создание строк таблицы
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            let name = Object.keys(data[key])[0]; // Получить имя из объекта
+            let points = data[key][name]; // Получить количество очков
+
+            list += '<tr><th scope="row">' + (parseInt(key) + 1) + '</th>' +
+                '<td>' + name + '</td>' +
+                '<td>' + points + '</td>' + '</tr>';
         }
     }
-    fullTable = tableStart + '<tbody>' + list + '</tbody>' + tableFinish;
-    document.body.innerHTML = indexView +  fullTable;    
+
+    let fullTable = tableStart + '<tbody>' + list + '</tbody>' + tableFinish;
+    document.body.innerHTML = indexView + fullTable;
 }
+
 //Окно ошибки 
 function ErrorWindow(headErrorIncorrectData, bodyErrorIncorrectData)
 {
