@@ -1,0 +1,15 @@
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.AssemblyInfoInputs.cache
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.AssemblyInfo.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.csproj.CoreCompileInputs.cache
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.sourcelink.json
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.exe
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.deps.json
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.runtimeconfig.json
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.dll
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.pdb
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.dll
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\refint\Read_IP.dll
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.pdb
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.genruntimeconfig.cache
+C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\ref\Read_IP.dll
