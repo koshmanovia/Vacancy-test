@@ -13,3 +13,13 @@ C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\refint\Read_IP.dll
 C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.pdb
 C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\Read_IP.genruntimeconfig.cache
 C:\MyProgs\Projects\Vacancy-test\Read_IP\obj\Debug\net8.0\ref\Read_IP.dll
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\LogIP.log
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\CheckIP.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\DataBaseIP.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\GenerateIPAndDateInFile.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Read_IP.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Setting.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\config
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\defaultconfig
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\CommandPromt.cs
+C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\output\test.txt

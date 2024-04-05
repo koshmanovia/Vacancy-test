@@ -1,0 +1,4 @@
+pathLogFile:null;
+pathOutputFile:null;
+startIp:0.0.0.0;
+mask:null;

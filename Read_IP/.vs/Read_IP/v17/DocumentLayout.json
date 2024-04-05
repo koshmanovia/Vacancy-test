@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\comandpromt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:comandpromt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\read_ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:read_ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\databaseip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:databaseip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\checkip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:checkip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\data\\config||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:data\\config||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\generateipanddateinfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:generateipanddateinfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\data\\defaultconfig||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:data\\defaultconfig||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\read_ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:read_ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\data\\logip.log||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:data\\logip.log||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\commandpromt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:commandpromt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Read_IP.cs",
-              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Read_IP.cs",
-              "RelativeDocumentMoniker": "Read_IP.cs",
-              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Read_IP.cs",
-              "RelativeToolTip": "Read_IP.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:24:31.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckIP.cs",
-              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\CheckIP.cs",
-              "RelativeDocumentMoniker": "CheckIP.cs",
-              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\CheckIP.cs",
-              "RelativeToolTip": "CheckIP.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T13:01:42.081Z",
+              "DocumentIndex": 5,
+              "Title": "LogIP.log",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\LogIP.log",
+              "RelativeDocumentMoniker": "Data\\LogIP.log",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\LogIP.log",
+              "RelativeToolTip": "Data\\LogIP.log",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-05T13:35:27.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GenerateIPAndDateInFile.cs",
-              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\GenerateIPAndDateInFile.cs",
-              "RelativeDocumentMoniker": "GenerateIPAndDateInFile.cs",
-              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\GenerateIPAndDateInFile.cs",
-              "RelativeToolTip": "GenerateIPAndDateInFile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Title": "Read_IP.cs",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Read_IP.cs",
+              "RelativeDocumentMoniker": "Read_IP.cs",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Read_IP.cs",
+              "RelativeToolTip": "Read_IP.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAhwBoAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:49:43.442Z",
+              "WhenOpened": "2024-04-04T16:53:54.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommandPromt.cs",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\CommandPromt.cs",
+              "RelativeDocumentMoniker": "CommandPromt.cs",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\CommandPromt.cs",
+              "RelativeToolTip": "CommandPromt.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAYwF4AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T12:34:39.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "defaultconfig",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\defaultconfig",
+              "RelativeDocumentMoniker": "Data\\defaultconfig",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\defaultconfig",
+              "RelativeToolTip": "Data\\defaultconfig",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-05T11:28:51.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "config",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\config",
+              "RelativeDocumentMoniker": "Data\\config",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Data\\config",
+              "RelativeToolTip": "Data\\config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-04T16:20:41.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DataBaseIP.cs",
               "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DataBaseIP.cs",
               "RelativeDocumentMoniker": "DataBaseIP.cs",
               "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DataBaseIP.cs",
               "RelativeToolTip": "DataBaseIP.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAApwE4AAAAAAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAYwFwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:41:17.753Z",
+              "WhenOpened": "2024-04-04T16:32:45.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ComandPromt.cs",
-              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\ComandPromt.cs",
-              "RelativeDocumentMoniker": "ComandPromt.cs",
-              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\ComandPromt.cs",
-              "RelativeToolTip": "ComandPromt.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAAwA4AAAAEAAAA",
+              "Title": "Setting.cs",
+              "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Setting.cs",
+              "RelativeDocumentMoniker": "Setting.cs",
+              "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Setting.cs",
+              "RelativeToolTip": "Setting.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAswEIAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:34:39.175Z",
+              "WhenOpened": "2024-04-04T16:23:42.413Z",
               "EditorCaption": ""
             }
           ]
