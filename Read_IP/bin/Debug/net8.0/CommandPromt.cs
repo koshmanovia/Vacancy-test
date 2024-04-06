@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Read_IP
-{   
+{
     /*!!! TODO:
      * 
      * Их мы ловим и выводим 
      * ArgumentException - DataBaseIP - не подходит формат IP
      * FileNotFoundException - Setting - не найден конфигурациооный файл 
+     *                       - GetRangeAddressesByMask - не верно введен IP
      */
     internal class CommandPromt
     {

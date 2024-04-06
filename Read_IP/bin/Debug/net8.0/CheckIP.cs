@@ -14,8 +14,15 @@ namespace Read_IP
             return validateIPv4Regex.IsMatch(IP);
         }
         public static string GetRangeAddressesByMask(string mask, string ipAddress)
-        {
-
+        {   
+            if(!Check(ipAddress)) 
+            {
+                throw new ArgumentException("Введен не корректный IP address");
+            }
+            if(!Check(mask)) 
+            {
+                
+            }
             return "";
         }
     }
