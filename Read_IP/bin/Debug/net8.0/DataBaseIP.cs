@@ -50,8 +50,11 @@ namespace Read_IP
             get { return _data; } 
             set { _data = value; }
         }
-
-        public DataBaseIP(Setting st) 
+        public DataBaseIP()
+        {
+        
+        }
+            public DataBaseIP(Setting st) 
         {
             Data = new Dictionary<string, List<DateTime>>();
             StreamReader sr = new StreamReader(st.PathLogFile);

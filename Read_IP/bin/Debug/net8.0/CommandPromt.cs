@@ -2,15 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Read_IP
 {   
-    /*!!! Их мы ловим и выводим 
-         * ArgumentException - DataBaseIP - не подходит формат IP
-         * FileNotFoundException - Setting - не найден конфигурациооный файл 
-         */
+    /*!!! TODO:
+     * 
+     * Их мы ловим и выводим 
+     * ArgumentException - DataBaseIP - не подходит формат IP
+     * FileNotFoundException - Setting - не найден конфигурациооный файл 
+     */
     internal class CommandPromt
     {
         string s;
@@ -21,7 +24,7 @@ namespace Read_IP
             {
                 Console.Write("Введите команду: ");
                 s = Console.ReadLine();                
-                switch (s)
+                switch (s.ToLower())
                 {
                     case "file-log":
                         Console.WriteLine(st.PathLogFile);
@@ -33,6 +36,11 @@ namespace Read_IP
                         Console.WriteLine(st.StartIp);
                         break;
                     case "address-mask":
+                        if(st.StartIp == "0.0.0.0") 
+                        {
+                            Console.WriteLine("не задан стартовый параметр IP адреса. Задайте IP адрес и повторите попытку");
+                            break;
+                        }
                         Console.WriteLine(st.Mask);
                         break;
                     case "help":
@@ -41,17 +49,19 @@ namespace Read_IP
                     case "cls":
                         Console.Clear();
                         break;
-                    case "exit":
+                    case "exit" or "quit":
                         Environment.Exit(0) ; 
                         break;
-                     case "start":
+                    case "start":
                         DataBaseIP db = new DataBaseIP(st);
                         Console.WriteLine(">>Данные загружены из файла!\n");
                         SaveDataOnOS(db, st);
                         Console.WriteLine("Данные загружены в файл!");
-                        //запустить чтение за файла и заполнение в местную бд
-                        //запись данных в файл
                         break;
+                    case "clear":
+                        db = new DataBaseIP();
+                        Console.WriteLine("Создана пустая база Данных !!!!!Инструкция как заполнить нужна!!!");
+                        break;                       
                     /*
                      custom:
                     --data-start - дата начала, если не задана data-end, то работает до сегодня
@@ -66,7 +76,7 @@ namespace Read_IP
                      */
                     default:
                         Console.WriteLine("Вы ввели не верную команду в случае проблем воспользуетесь командой help");
-                     break;  
+                    break;  
                 }
             }            
         }
@@ -77,14 +87,15 @@ namespace Read_IP
                 "file-output: путь к файлу с результатом \n" +
                 "address-start: нижняя граница диапазона адресов, необязательный параметр, по умолчанию обрабатываются все адреса \n" +
                 "address-mask: маска подсети, задающая верхнюю границу диапазона десятичное число.Необязательный параметр в случае, если он не указан, обрабатываются все адреса, начиная с нижней границы диапазона.Параметр нельзя использовать, если не задан address-start. \n" +
-                "start - начать обработку\n" +
-                "exit - выйти из приложения\n" +
-                "cls - очистка экрана от лишнего\n" +
-                "help: вывод всех команд \n" +
+                "start: начать обработку\n" +
+                "exit: выйти из приложения\n" +
+                "quit: выйти из приложения\n" +
+                "cls: очистка экрана от лишнего\n" +
+                "help: вывод всех команд \n\n\n\n" +
                 "TODO:\n" +
-                "data-start - дата начала, если не задана \n" +
-                "data-end, то работает до сегодня\n" +
-                "data-end - дата конца\n" +
+                "date-start - дата начала, если не задана \n" +
+                "date-end, то работает до сегодня\n" +
+                "date-end - дата конца\n" +
                 "read - чтение данных из файла\n" +
                 "default - стандартные настройки\n" +
                 "show - показать текущие настройки\n" +           
@@ -95,17 +106,20 @@ namespace Read_IP
         }
         private void SaveDataOnOS(DataBaseIP db, Setting st)
         {
-            string path = st.PathOutputFile + @"\test.txt";
+            string path = st.PathOutputFile + $"\\{DateTime.Now}".ToString().Replace(' ', '_').Replace(':', '-').Replace('.', '-') + ".txt";            
             Console.WriteLine(path);
-            string text;
             List<string> keyList = db.GetKeys();
+            if (!File.Exists(path))
+            { 
+                File.Create(path).Close();
+               
+            }
             foreach (string key in keyList) 
-            {
+            {          
                 using (StreamWriter writer = new StreamWriter(path, true))
                 {
                     writer.WriteLine(key + " - " + db.GetData(key).Count());
                 }
-
             }            
         }
     }

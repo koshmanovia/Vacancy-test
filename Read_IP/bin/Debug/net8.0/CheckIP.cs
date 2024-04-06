@@ -13,6 +13,11 @@ namespace Read_IP
             Regex validateIPv4Regex = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
             return validateIPv4Regex.IsMatch(IP);
         }
+        public static string GetRangeAddressesByMask(string mask, string ipAddress)
+        {
+
+            return "";
+        }
     }
 }
 
