@@ -11,9 +11,11 @@ namespace Read_IP
     /*!!! TODO:
      * 
      * Их мы ловим и выводим 
-     * ArgumentException - DataBaseIP - не подходит формат IP
+     * ArgumentException - DataBaseIP - не подходит формат IP 
+     *                   - не корректная маска
      * FileNotFoundException - Setting - не найден конфигурациооный файл 
      *                       - GetRangeAddressesByMask - не верно введен IP
+     * 
      */
     internal class CommandPromt
     {
