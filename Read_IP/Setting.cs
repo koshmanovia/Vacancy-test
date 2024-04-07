@@ -22,9 +22,14 @@ namespace Read_IP
             set { _pathOutputFile = value; }
             get { return _pathOutputFile; }
         }
-        public string StartIp 
+        public string StartIp
         {
-            set { _startIp = value; }
+            set {
+                if (CheckIP.Check(value))
+                { _startIp = value; }
+                else { throw new ArgumentException("Неверно введен IP"); }
+            }
+
             get { return _startIp; }
         }
 

@@ -22,4 +22,3 @@ C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Setting.cs
 C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\config
 C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\defaultconfig
 C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\CommandPromt.cs
-C:\MyProgs\Projects\Vacancy-test\Read_IP\bin\Debug\net8.0\Data\output\test.txt

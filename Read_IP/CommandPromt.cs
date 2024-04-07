@@ -9,15 +9,6 @@ using System.Threading.Tasks;
 
 namespace Read_IP
 {
-    /*!!! TODO:
-     * 
-     * Их мы ловим и выводим 
-     * ArgumentException - DataBaseIP - не подходит формат IP 
-     *                   - не корректная маска
-     * FileNotFoundException - Setting - не найден конфигурациооный файл 
-     *                       - GetRangeAddressesByMask - не верно введен IP
-     * 
-     */
     internal class CommandPromt
     {
         string s;
@@ -27,65 +18,90 @@ namespace Read_IP
             while (true)
             {
                 Console.Write("Введите команду: ");
-                s = Console.ReadLine();                
-                switch (s.ToLower())
+                try
                 {
-                    case "file-log":
-                        Console.WriteLine(st.PathLogFile);
-                        break;
-                    case "file-output":
-                        Console.WriteLine(st.PathOutputFile);
-                        break;
-                    case "address-start":
-                        Console.WriteLine(st.StartIp);
-                        break;
-                    case "address-mask":
-                        if(st.StartIp == "0.0.0.0") 
-                        {
-                            Console.WriteLine("не задан стартовый параметр IP адреса. Задайте IP адрес и повторите попытку");
+                    s = Console.ReadLine();
+                    switch (s.ToLower())
+                    {
+                        case "file-log":
+                            Console.WriteLine(st.PathLogFile);
                             break;
-                        }
-                        Console.WriteLine(st.Mask);
-                        break;
-                    case "help":
-                        Help();
-                        break;
-                    case "cls":
-                        Console.Clear();
-                        break;
-                    case "exit" or "quit":
-                        Environment.Exit(0) ; 
-                        break;
-                    case "start":
-                        DataBaseIP db = new DataBaseIP(st);
-                        Console.WriteLine(">>Данные загружены из файла!\n");
-                        SaveDataOnOS(db, st);
-                        Console.WriteLine("Данные загружены в файл!");
-                        break;
-                    case "clear":
-                        db = new DataBaseIP();
-                        Console.WriteLine("Создана пустая база Данных !!!!!Инструкция как заполнить нужна!!!");
-                        break;
-                    case "test":
-                        DataBaseIP db1 = new DataBaseIP(st);
-                        Test(CheckIP.GetRangeAddressesByMask("158.215.32.1", "24"), db1,st);
-                        break;
-                    /*
-                     custom:
-                    --data-start - дата начала, если не задана data-end, то работает до сегодня
-                    --data-end - дата конца
-                    --read - чтение данных из файла
-                    --default - стандартные настройки
-                    --show - показать текущие настройки                    
-                    --save - сохранить настройку
-                    --help - вывод всех команд                  
-                    --load - загрузить параметры из файла
-                    --clear-db - очистка бд
-                     */
-                    default:
-                        Console.WriteLine("Вы ввели не верную команду в случае проблем воспользуетесь командой help");
-                    break;  
+                        case "file-output":
+                            Console.WriteLine(st.PathOutputFile);
+                            break;
+                        case "address-start":
+                            Console.Write("Введите новый IP адрес: ");
+                            st.StartIp = Console.ReadLine();
+                            Console.WriteLine(st.StartIp);
+                            break;
+                        case "address-mask":
+                            if (st.StartIp == "0.0.0.0")
+                            {
+                                Console.WriteLine("не задан стартовый параметр IP адреса. Задайте IP адрес и повторите попытку");
+                                break;
+                            }
+                            Console.WriteLine(st.Mask);
+                            break;
+                        case "help":
+                            Help();
+                            break;
+                        case "cls":
+                            Console.Clear();
+                            break;
+                        case "exit" or "quit":
+                            Environment.Exit(0);
+                            break;
+                        case "start":
+                            DataBaseIP db = new DataBaseIP(st);
+                            Console.WriteLine(">>Данные загружены из файла!\n");
+                            if (st.StartIp == "0.0.0.0" && st.Mask == "0")
+                            {
+                                SaveDataOnOS(db, st);
+                            }
+                            else if (st.Mask != "0")
+                            {
+                                SaveDataOnOS(CheckIP.GetRangeAddressesByMask(st.StartIp, st.Mask), db, st);
+                            }
+                            else 
+                            {
+                                SaveDataOnOSZeroMask(db, st);//В разработке
+                            }
+                            Console.WriteLine("Данные загружены в файл!");
+                            break;
+                        case "clear":
+                            db = new DataBaseIP();
+                            Console.WriteLine("Создана пустая база Данных !!!!!Инструкция как заполнить нужна!!!");
+                            break;
+                        case "test":
+                            DataBaseIP db1 = new DataBaseIP(st);
+                            st.StartIp = "5.255.250.10";
+                            SaveDataOnOSZeroMask(db1, st);
+                            break;
+                        /*
+                         custom:
+                        --data-start - дата начала, если не задана data-end, то работает до сегодня
+                        --data-end - дата конца
+                        --read - чтение данных из файла
+                        --default - стандартные настройки
+                        --show - показать текущие настройки                    
+                        --save - сохранить настройку
+                        --help - вывод всех команд                  
+                        --load - загрузить параметры из файла
+                        --clear-db - очистка бд
+                         */
+                        default:
+                            Console.WriteLine("Вы ввели не верную команду в случае проблем воспользуетесь командой help");
+                            break;
+                    }
                 }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch(FileNotFoundException ex) 
+                {
+                    Console.WriteLine(ex.Message);
+                }               
             }            
         }
         private void Help() 
@@ -130,16 +146,14 @@ namespace Read_IP
                 }
             }            
         }
-        public void Test(string between, DataBaseIP db, Setting st)
+        private void SaveDataOnOS(string between, DataBaseIP db, Setting st)
         {
             string saveNameFile = st.PathOutputFile + $"\\{DateTime.Now}".ToString().Replace(' ', '_').Replace(':', '-').Replace('.', '-') + ".txt";
-            List<string> keyList = db.GetKeys();
             string[] rangeStr =  between.Split(new char[] { '.' });
             int[] rangeInt = new int[rangeStr.Length];
             for (int i = 0; i < rangeStr.Length; i++)
             {
-                rangeInt[i] = int.Parse(rangeStr[i]);
-                Console.Write(rangeInt[i] + ".");
+                rangeInt[i] = int.Parse(rangeStr[i]);               
             }
             if (rangeInt[0] != rangeInt[4])
             {
@@ -151,7 +165,12 @@ namespace Read_IP
                         {
                             for (int h = 0; h < 256; h++ )//четвертый актет
                             {
-                                db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
+                                {
+                                    SaveOneIPForFile(saveNameFile, $"{i}.{j}.{k}.{h} - " +
+                                                      $"{db.Data[$"{i}.{j}.{k}.{h}"].Count}");
+                                    db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                }
                             }
                         }
                     }
@@ -160,11 +179,35 @@ namespace Read_IP
             }
             else if (rangeInt[1] != rangeInt[5])
             {
-                Console.WriteLine("TO DO1");
+                for (int i = rangeInt[1]; i <= rangeInt[5]; i++) //первый актет
+                {
+                    for (int j = 0; j < 256; j++)//второй актет
+                    {
+                        for (int k = 0; k < 256; k++)//третий актет
+                        {
+                            if (db.Data.ContainsKey($"{rangeInt[0]}.{i}.{j}.{k}"))
+                            {
+                                SaveOneIPForFile(saveNameFile, $"{rangeInt[0]}.{i}.{j}.{k} - " +
+                                                      $"{db.Data[$"{rangeInt[0]}.{i}.{j}.{k}"].Count}");
+                                db.Data.ContainsKey($"{rangeInt[0]}.{i}.{j}.{k}");
+                            }
+                        }
+                    }
+                }
             }
             else if (rangeInt[2] != rangeInt[6])
             {
-                Console.WriteLine("TO DO2");
+                for (int i = rangeInt[1]; i <= rangeInt[5]; i++) //первый актет
+                {
+                    for (int j = 0; j < 256; j++)//второй актет
+                    {
+                        if (db.Data.ContainsKey($"{rangeInt[0]}.{rangeInt[1]}.{i}.{j}"))
+                        {
+                            SaveOneIPForFile(saveNameFile, $"{rangeInt[0]}.{rangeInt[1]}.{i}.{j} - " +
+                                                    $"{db.Data[$"{rangeInt[0]}.{rangeInt[1]}.{i}.{j}"].Count}");                           
+                        }
+                    }
+                }
             }
             else if (rangeInt[3] != rangeInt[7])
             {
@@ -173,38 +216,111 @@ namespace Read_IP
                     if (db.Data.ContainsKey($"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i}"))
                     {
                         SaveOneIPForFile(saveNameFile, $"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i} - " +
-                                                       $"{db.Data[$"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i}"].Count}");
-                        Console.WriteLine($"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i} - " +
-                                                       $"{db.Data[$"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i}"].Count}");
+                                                       $"{db.Data[$"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{i}"].Count}");                        
                     }
                 }
             }
             else if (rangeInt[3] == rangeInt[7])
-            {
-                Console.WriteLine("TO DO4");
+            {                
+                if (db.Data.ContainsKey($"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{rangeInt[3]}"))
+                {                    
+                    SaveOneIPForFile(saveNameFile, $"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{rangeInt[3]} - " +
+                                                    $"{db.Data[$"{rangeInt[0]}.{rangeInt[1]}.{rangeInt[2]}.{rangeInt[3]}"].Count}");                    
+                }
             }
-
-
-            //если 0 и 4 не равны
-            //запускаем 4 цикла 1 основной 3 вложенных
-            //сравниваем с ключом в бд, если да, записываем идем пока не станет равным с 1 до 5
-
-            //2 и 6 тож самое
-
-            //3 и 7
-
-            //8 и 4
-
-
         }
 
-
-        public void SaveOneIPForFile(string path, string data)
+        private void SaveDataOnOSZeroMask(DataBaseIP db, Setting st)
         {
-            if (!File.Exists(path))
+            string saveNameFile = st.PathOutputFile + $"\\{DateTime.Now}".ToString().Replace(' ', '_').Replace(':', '-').Replace('.', '-') + ".txt";
+            string[] rangeStr = st.StartIp.Split(new char[] { '.' });
+            int[] rangeInt = new int[rangeStr.Length];
+            for (int i = 0; i < rangeStr.Length; i++)
+            {
+                rangeInt[i] = int.Parse(rangeStr[i]);
+            }
+            for (int i = rangeInt[0]; i < 256; i++) //первый актет
+            {
+                if (i == rangeInt[0])
+                {
+                    for (int j = rangeInt[1]; j < 256; j++)//второй актет
+                    {
+                        if (j == rangeInt[1])
+                        {
+                            for (int k = rangeInt[2]; k < 256; k++)//третий актет
+                            {
+                                if (k == rangeInt[2]) 
+                                {
+                                    for (int h = rangeInt[3]; h < 256; h++)//четвертый актет
+                                    {
+                                        if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
+                                        {
+                                            SaveOneIPForFile(saveNameFile, $"{i}.{j}.{k}.{h} - " +
+                                                                $"{db.Data[$"{i}.{j}.{k}.{h}"].Count}");
+                                            db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                        }
+                                    }
+                                }
+                                else 
+                                {
+                                    for (int h = 0; h < 256; h++)//четвертый актет
+                                    {
+                                        if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
+                                        {
+                                            SaveOneIPForFile(saveNameFile, $"{i}.{j}.{k}.{h} - " +
+                                                                $"{db.Data[$"{i}.{j}.{k}.{h}"].Count}");
+                                            db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        else 
+                        {
+                            for (int k = 0; k < 256; k++)//третий актет
+                            {
+                                for (int h = 0; h < 256; h++)//четвертый актет
+                                {
+                                    if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
+                                    {
+                                        SaveOneIPForFile(saveNameFile, $"{i}.{j}.{k}.{h} - " +
+                                                            $"{db.Data[$"{i}.{j}.{k}.{h}"].Count}");
+                                        db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < 256; j++)//второй актет
+                    {
+                        for (int k = 0; k < 256; k++)//третий актет
+                        {
+                            for (int h = 0; h < 256; h++)//четвертый актет
+                            {
+                                if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
+                                {
+                                    SaveOneIPForFile(saveNameFile, $"{i}.{j}.{k}.{h} - " +
+                                                        $"{db.Data[$"{i}.{j}.{k}.{h}"].Count}");
+                                    db.Data.ContainsKey($"{i}.{j}.{k}.{h}");
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+        public void SaveOneIPForFile(string path, string data)
+        {            
+            if (!File.Exists(path))         
             {
                 File.Create(path).Close();
-
             }            
             using (StreamWriter writer = new StreamWriter(path, true))
             {
