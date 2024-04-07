@@ -40,7 +40,8 @@ namespace Read_IP
                 }
             }
             charArray = ConvertStringIpToCharArrayByte(ipAddress);
-            for(int i = 0;i < 32; i++) 
+
+            for (int i = 0; i < 32; i++)
             {
                 if (i <= maskNum)
                 {
@@ -51,11 +52,11 @@ namespace Read_IP
                 {
                     ipMin += 0;
                     ipMax += 1;
-                }            
+                }
             }
             ipMin = ConvertStringByteIpToStringIntIp(ipMin);
             ipMax = ConvertStringByteIpToStringIntIp(ipMax);
-            return $"{ipMin} - {ipMax}";
+            return $"{ipMin}.{ipMax}";
         }
         static public int ConvertMaskToNum(string mask)
         {
@@ -124,6 +125,7 @@ namespace Read_IP
                     returnStr += Convert.ToByte(temp, 2);
                 }
             }
+           //Вернуть Массив всех адресов для перебора потом по этому массиву данных!в
             return returnStr;
         }
     }
