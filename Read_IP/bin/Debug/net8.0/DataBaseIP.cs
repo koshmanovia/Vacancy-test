@@ -65,8 +65,16 @@ namespace Read_IP
             while (!sr.EndOfStream)
             {
                 line = sr.ReadLine();
-                temp = line.Split(new char[] { ' ' });
-                this.AddData(temp[0], DateTime.Parse(temp[1]));                
+                temp = line.Split(new char[] { ':' },2);
+                try
+                {
+                    this.AddData(temp[0], DateTime.Parse(temp[1]));
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    //пропуск пустой строки 
+                    continue;
+                }
             }
             sr.Close();
         }

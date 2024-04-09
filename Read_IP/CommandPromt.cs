@@ -239,19 +239,19 @@ namespace Read_IP
             {
                 rangeInt[i] = int.Parse(rangeStr[i]);
             }
-            for (int i = rangeInt[0]; i < 256; i++) //первый актет
+            for (int i = rangeInt[0]; i < 256; i++) 
             {
                 if (i == rangeInt[0])
                 {
-                    for (int j = rangeInt[1]; j < 256; j++)//второй актет
+                    for (int j = rangeInt[1]; j < 256; j++)
                     {
                         if (j == rangeInt[1])
                         {
-                            for (int k = rangeInt[2]; k < 256; k++)//третий актет
+                            for (int k = rangeInt[2]; k < 256; k++)
                             {
                                 if (k == rangeInt[2]) 
                                 {
-                                    for (int h = rangeInt[3]; h < 256; h++)//четвертый актет
+                                    for (int h = rangeInt[3]; h < 256; h++)
                                     {
                                         if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
                                         {
@@ -263,7 +263,7 @@ namespace Read_IP
                                 }
                                 else 
                                 {
-                                    for (int h = 0; h < 256; h++)//четвертый актет
+                                    for (int h = 0; h < 256; h++)
                                     {
                                         if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
                                         {
@@ -278,9 +278,9 @@ namespace Read_IP
                         }
                         else 
                         {
-                            for (int k = 0; k < 256; k++)//третий актет
+                            for (int k = 0; k < 256; k++)
                             {
-                                for (int h = 0; h < 256; h++)//четвертый актет
+                                for (int h = 0; h < 256; h++)
                                 {
                                     if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
                                     {
@@ -295,11 +295,11 @@ namespace Read_IP
                 }
                 else
                 {
-                    for (int j = 0; j < 256; j++)//второй актет
+                    for (int j = 0; j < 256; j++)
                     {
-                        for (int k = 0; k < 256; k++)//третий актет
+                        for (int k = 0; k < 256; k++)
                         {
-                            for (int h = 0; h < 256; h++)//четвертый актет
+                            for (int h = 0; h < 256; h++)
                             {
                                 if (db.Data.ContainsKey($"{i}.{j}.{k}.{h}"))
                                 {
