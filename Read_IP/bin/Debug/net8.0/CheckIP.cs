@@ -86,7 +86,7 @@ namespace Read_IP
                 }
             }
             if (maskNum == 0) { maskNum = 32; }
-            return (maskNum);
+            return maskNum;
         }
         static private char[] ConvertStringIpToCharArrayByte(string ip) 
         {

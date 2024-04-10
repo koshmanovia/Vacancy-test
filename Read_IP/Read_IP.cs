@@ -15,10 +15,28 @@ namespace Read_IP
         {
             //CommandPromt cp = new CommandPromt();
             //cp.EnterCommand();
-            Utilities u = new Utilities();
-            int[] a = u.ConvertStringIpToArrayInt("233.494.42.123");
-            foreach (int i in a) { Console.WriteLine( i  ); }
 
+            //Utilities u = new Utilities();
+            //Console.WriteLine(u.ConvertStringMaskToNum("255.255.0.0"));
+            //int[] a = u.GetRangeByIpAndMask(u.ConvertStringIpToArrayInt("25.55.22.13"),u.ConvertStringMaskToNum("255.255.0.0"));
+            //foreach (int i in a) { Console.WriteLine( i  ); }
+
+
+
+            int intRange = 0;
+
+            char[] c = new char[] {'1','1','1','1','1' };
+
+            intRange = int.Parse(new string(c, 0, 5).ToArray());
+
+            Console.WriteLine(intRange);
+
+
+            string s = new string(c);
+            s = s.ToString();
+            Console.WriteLine(s);
+            intRange = int.Parse(s, );
+            Console.WriteLine(intRange);
         }
     }
 }
