@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Read_IP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1973128ecdb2db5936217381b84cfbdeec8283c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c99f103a2ae65407c579e1fdd3a45638947017c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Read_IP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Read_IP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

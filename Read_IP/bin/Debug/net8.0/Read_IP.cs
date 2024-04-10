@@ -13,8 +13,12 @@ namespace Read_IP
     {
         static void Main(string[] args)
         {
-            CommandPromt cp = new CommandPromt();
-            cp.EnterCommand();
+            //CommandPromt cp = new CommandPromt();
+            //cp.EnterCommand();
+            Utilities u = new Utilities();
+            int[] a = u.ConvertStringIpToArrayInt("233.494.42.123");
+            foreach (int i in a) { Console.WriteLine( i  ); }
+
         }
     }
 }
