@@ -16,22 +16,9 @@ namespace Read_IP
             //CommandPromt cp = new CommandPromt();
             //cp.EnterCommand();
 
-            Utilities u = new Utilities();
-            Console.WriteLine(u.ConvertStringMaskToNum("255.255.0.0"));
-            int[] a = u.GetRangeByIpAndMask(u.ConvertStringIpToArrayInt("25.55.22.13"), u.ConvertStringMaskToNum("255.255.0.0"));
-            foreach (int i in a) { Console.Write(i + "."); }
-            
-            
-            Console.WriteLine(    );
+            DictionaryIpAndDate dtip = new DictionaryIpAndDate();
+            dtip.AddIP(Utilities.ConvertStringIpToArrayInt("222.112.102.122"), DateTime.Now);
 
-             a = u.GetRangeByIpAndMask(u.ConvertStringIpToArrayInt("192.168.1.1"), u.ConvertStringMaskToNum("255.255.255.0"));
-            foreach (int i in a) { Console.Write(i + "."); }
-
-
-            Console.WriteLine();
-
-             a = u.GetRangeByIpAndMask(u.ConvertStringIpToArrayInt("10.10.10.10"), u.ConvertStringMaskToNum("255.0.0.0"));
-            foreach (int i in a) { Console.Write(i + "."); }
         }
     }
 }

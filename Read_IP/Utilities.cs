@@ -12,7 +12,7 @@ namespace Read_IP
 {
     internal class Utilities
     {
-        public int[] GetRangeByIpAndMask(int[] ip, int mask)
+        public static int[] GetRangeByIpAndMask(int[] ip, int mask)
         {
             if (!CheckMask(mask)) { throw new ArgumentException("Некорректная маска"); }
             char[] inpByteCharArrayIp = ConvertIntArrayIpToCharArrayByteIp(ip);
@@ -49,7 +49,7 @@ namespace Read_IP
             }
             return intRange;
         }
-        public int[] ConvertStringIpToArrayInt(string ip)
+        public static int[] ConvertStringIpToArrayInt(string ip)
         {
             if (CheckingCorrectIP(ip))
             {
@@ -61,7 +61,7 @@ namespace Read_IP
                 throw new ArgumentException("Некорректный IP адрес");
             }
         }
-        public int ConvertStringMaskToNum(string mask) 
+        public static int ConvertStringMaskToNum(string mask) 
         {
             char[] charArray = new char[32];
             bool maskCorrect = true;
@@ -91,7 +91,7 @@ namespace Read_IP
             if (maskNum == 0) { maskNum = 32; }
             return maskNum;
         }
-        public bool CheckMask(int mask) 
+        public static bool CheckMask(int mask) 
         { 
             if (mask > 0 && mask < 33)
             {
@@ -125,7 +125,5 @@ namespace Read_IP
             }
             return binary.ToCharArray();
         }
-
-        
     }
 }
