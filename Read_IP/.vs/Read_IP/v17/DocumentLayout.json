@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\dictionaryipanddate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:dictionaryipanddate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\dictionaryipanddateenumerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:dictionaryipanddateenumerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|solutionrelative:utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA44E917-83AD-45F6-8431-6595A7B1A1BD}|Read_IP.csproj|c:\\myprogs\\projects\\vacancy-test\\read_ip\\read_ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,43 +42,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DictionaryIpAndDateEnumerator.cs",
               "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DictionaryIpAndDateEnumerator.cs",
               "RelativeDocumentMoniker": "DictionaryIpAndDateEnumerator.cs",
               "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DictionaryIpAndDateEnumerator.cs",
               "RelativeToolTip": "DictionaryIpAndDateEnumerator.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAQwAkAAABIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T12:57:00.381Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DictionaryIpAndDate.cs",
               "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DictionaryIpAndDate.cs",
               "RelativeDocumentMoniker": "DictionaryIpAndDate.cs",
               "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\DictionaryIpAndDate.cs",
               "RelativeToolTip": "DictionaryIpAndDate.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwDgAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T11:16:34.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Utilities.cs",
               "DocumentMoniker": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Utilities.cs",
               "RelativeDocumentMoniker": "Utilities.cs",
               "ToolTip": "C:\\MyProgs\\Projects\\Vacancy-test\\Read_IP\\Utilities.cs",
               "RelativeToolTip": "Utilities.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAA1AAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T10:49:10.348Z",
               "EditorCaption": ""
@@ -93,8 +93,7 @@
               "RelativeToolTip": "Read_IP.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T16:53:54.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T16:53:54.705Z"
             },
             {
               "$type": "Document",

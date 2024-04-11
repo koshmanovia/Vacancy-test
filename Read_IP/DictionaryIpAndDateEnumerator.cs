@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Read_IP
 {
-    internal class DictionaryIpAndDateEnumerator : IDictionaryEnumerator
+    internal class DictionaryIpAndDateEnumerator : IDictionaryEnumerator 
     {
         int currIndex = -1;        
         DictionaryIpAndDate dictionaryIpAndDate;
@@ -21,6 +21,14 @@ namespace Read_IP
         {
             get { return dictionaryIpAndDate; }
         }
+        #region НАДО РЕАЛИЗОВАТЬ!
+        public DictionaryEntry Entry => throw new NotImplementedException();
+
+        public object Key => throw new NotImplementedException();
+
+        public object? Value => throw new NotImplementedException();
+        #endregion
+
         public bool MoveNext()
         {
             currIndex++;
