@@ -18,6 +18,10 @@ namespace Read_IP
 
             DictionaryIpAndDate dtip = new DictionaryIpAndDate();
             dtip.AddIP(Utilities.ConvertStringIpToArrayInt("222.112.102.122"), DateTime.Now);
+            foreach(var c  in dtip)
+            {
+                Console.WriteLine(c);
+            }
 
         }
     }
