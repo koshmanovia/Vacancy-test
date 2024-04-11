@@ -21,9 +21,10 @@ namespace Read_IP
             int[] intRange = new int[8]; //массив, один как даипазон, 0-3 значение - нижняя планка, 4-7 верхняя планка
             for (int i = 0; i < 32; i++)
             {                
-                if (i <= mask)
+                if (i < mask)
                 {
                     minByteCharArrayIp[i] = inpByteCharArrayIp[i];
+                    minByteCharArrayIp.CopyTo(maxByteCharArrayIp, 0);
                 }
                 else
                 {
@@ -32,22 +33,19 @@ namespace Read_IP
                 }
                 if (i == mask)
                 {
-                    minByteCharArrayIp.CopyTo(maxByteCharArrayIp, 0);
+                    
                 }
             }
             for (int i = 0; i < intRange.Length; i++) 
             {
                 if (i < 4)
-                {
-
-                    // преобразование из 2й в 10ю СС доделать и все полетит
-                    intRange[i] = int.Parse(Convert.ToString(int.Parse(new string(minByteCharArrayIp, (0 + i * 8), 8)), 10));
+                {                    
+                    intRange[i] = Convert.ToInt32(new string(minByteCharArrayIp, (0 + (i * 8)), 8), 2);                   
                 }
                 else
-                {
-                    intRange[i] = int.Parse(new string(maxByteCharArrayIp, (0 + (i-4) * 8), 8));
-                }
-                
+                {                  
+                    intRange[i] = Convert.ToInt32(new string(maxByteCharArrayIp, (0 + (i-4) * 8), 8), 2);                    
+                }                
             }
             return intRange;
         }
